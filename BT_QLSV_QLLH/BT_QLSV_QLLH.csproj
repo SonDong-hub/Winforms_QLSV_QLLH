@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +53,21 @@
     <Compile Include="QLLH.Designer.cs">
       <DependentUpon>QLLH.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLLH1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLLH.dbml</DependentUpon>
+    </Compile>
     <Compile Include="QLSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLSV.Designer.cs">
       <DependentUpon>QLSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLSV1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
     <Compile Include="Đăng nhập.cs">
       <SubType>Form</SubType>
@@ -93,9 +104,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLLH.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLLH1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLLH.dbml.layout">
+      <DependentUpon>QLLH.dbml</DependentUpon>
+    </None>
+    <None Include="QLSV.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLSV1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSV.dbml.layout">
+      <DependentUpon>QLSV.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

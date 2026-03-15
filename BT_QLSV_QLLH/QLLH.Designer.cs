@@ -33,8 +33,8 @@
             this.btn_lammoi = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_khoá = new System.Windows.Forms.TextBox();
+            this.txb_khoa = new System.Windows.Forms.TextBox();
             this.txb_tenlop = new System.Windows.Forms.TextBox();
             this.txb_malop = new System.Windows.Forms.TextBox();
             this.lb_khoá = new System.Windows.Forms.Label();
@@ -42,17 +42,17 @@
             this.lb_tenlop = new System.Windows.Forms.Label();
             this.lb_malop = new System.Windows.Forms.Label();
             this.lb_thongtinlop = new System.Windows.Forms.Label();
+            this.dgv_lop = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_timkiem = new System.Windows.Forms.Label();
             this.txb_timkiem = new System.Windows.Forms.TextBox();
             this.btn_timkiem = new System.Windows.Forms.Button();
-            this.dgv_lop = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lop)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -68,8 +68,8 @@
             this.splitContainer1.Panel1.Controls.Add(this.btn_lammoi);
             this.splitContainer1.Panel1.Controls.Add(this.btn_sua);
             this.splitContainer1.Panel1.Controls.Add(this.btn_them);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txb_khoá);
+            this.splitContainer1.Panel1.Controls.Add(this.txb_khoa);
             this.splitContainer1.Panel1.Controls.Add(this.txb_tenlop);
             this.splitContainer1.Panel1.Controls.Add(this.txb_malop);
             this.splitContainer1.Panel1.Controls.Add(this.lb_khoá);
@@ -139,19 +139,19 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txb_khoá
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 310);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 22);
-            this.textBox2.TabIndex = 2;
+            this.txb_khoá.Location = new System.Drawing.Point(16, 310);
+            this.txb_khoá.Name = "txb_khoá";
+            this.txb_khoá.Size = new System.Drawing.Size(218, 22);
+            this.txb_khoá.TabIndex = 2;
             // 
-            // textBox1
+            // txb_khoa
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 232);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 22);
-            this.textBox1.TabIndex = 2;
+            this.txb_khoa.Location = new System.Drawing.Point(16, 232);
+            this.txb_khoa.Name = "txb_khoa";
+            this.txb_khoa.Size = new System.Drawing.Size(218, 22);
+            this.txb_khoa.TabIndex = 2;
             // 
             // txb_tenlop
             // 
@@ -217,6 +217,17 @@
             this.lb_thongtinlop.TabIndex = 0;
             this.lb_thongtinlop.Text = "Thông tin lớp học";
             // 
+            // dgv_lop
+            // 
+            this.dgv_lop.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_lop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_lop.Location = new System.Drawing.Point(58, 130);
+            this.dgv_lop.Name = "dgv_lop";
+            this.dgv_lop.RowHeadersWidth = 51;
+            this.dgv_lop.RowTemplate.Height = 24;
+            this.dgv_lop.Size = new System.Drawing.Size(422, 299);
+            this.dgv_lop.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lb_timkiem);
@@ -258,17 +269,6 @@
             this.btn_timkiem.Text = "Tìm";
             this.btn_timkiem.UseVisualStyleBackColor = false;
             // 
-            // dgv_lop
-            // 
-            this.dgv_lop.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_lop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_lop.Location = new System.Drawing.Point(58, 130);
-            this.dgv_lop.Name = "dgv_lop";
-            this.dgv_lop.RowHeadersWidth = 51;
-            this.dgv_lop.RowTemplate.Height = 24;
-            this.dgv_lop.Size = new System.Drawing.Size(422, 299);
-            this.dgv_lop.TabIndex = 1;
-            // 
             // QLLH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,9 +282,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lop)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_lop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,9 +299,9 @@
         private System.Windows.Forms.Label lb_khoá;
         private System.Windows.Forms.Label lb_khoa;
         private System.Windows.Forms.Label lb_tenlop;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb_khoa;
         private System.Windows.Forms.Button btn_them;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txb_khoá;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_lammoi;
         private System.Windows.Forms.Button btn_sua;
