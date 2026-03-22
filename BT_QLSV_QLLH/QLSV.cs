@@ -23,8 +23,19 @@ namespace BT_QLSV_QLLH
             txb_masv.Focus();
             cmb_gioitinh.Items.Add("Nam");
             cmb_gioitinh.Items.Add("Nữ");
+            LoadLop();
             LoadData();
             LoadAutoComplete();
+        }
+
+        // Load lớp
+        private void LoadLop()
+        {
+            QLSVDataContext db = new QLSVDataContext();
+
+            cbx_lop.DataSource = db.SinhVien.ToList();
+            cbx_lop.DisplayMember = "Lop"; 
+            cbx_lop.ValueMember = "Lop";   
         }
 
         // Hiện thị dữ liệu
@@ -55,7 +66,7 @@ namespace BT_QLSV_QLLH
             sv.HoTen = txb_hoten.Text;
             sv.NgaySinh = dt_ngaysinh.Value;
             sv.GioiTinh = cmb_gioitinh.Text;
-            sv.Lop = txb_lop.Text;
+            sv.Lop = cbx_lop.Text;
 
             db.SinhVien.InsertOnSubmit(sv);
             db.SubmitChanges();
@@ -78,7 +89,7 @@ namespace BT_QLSV_QLLH
                 txb_hoten.Text = row.Cells["HoTen"].Value.ToString();
                 dt_ngaysinh.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
                 cmb_gioitinh.SelectedItem = row.Cells["GioiTinh"].Value.ToString();
-                txb_lop.Text = row.Cells["Lop"].Value.ToString();
+                cbx_lop.SelectedValue = row.Cells["Lop"].Value.ToString();
             }
         }
 
@@ -98,7 +109,7 @@ namespace BT_QLSV_QLLH
             sv.HoTen = txb_hoten.Text;
             sv.NgaySinh = dt_ngaysinh.Value;
             sv.GioiTinh = cmb_gioitinh.Text;
-            sv.Lop = txb_lop.Text;
+            sv.Lop = cbx_lop.Text;
 
             db.SubmitChanges();
 
@@ -178,11 +189,11 @@ namespace BT_QLSV_QLLH
             // Xóa dữ liệu trong các ô
             txb_masv.Clear();
             txb_hoten.Clear();
-            txb_lop.Clear();
             txb_timkiem.Clear();
 
             // Reset combobox
             cmb_gioitinh.SelectedIndex = -1;
+            cbx_lop.SelectedIndex = -1;
 
             // Reset ngày sinh về hôm nay
             dt_ngaysinh.Value = DateTime.Now;
@@ -192,6 +203,13 @@ namespace BT_QLSV_QLLH
 
             // Load lại toàn bộ dữ liệu
             LoadData();
+        }
+
+        private void btn_QLLH_Click(object sender, EventArgs e)
+        {
+            QLLH QLLH = new QLLH();
+            QLLH.Show();
+            this.Hide();
         }
     }
 }

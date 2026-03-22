@@ -178,5 +178,17 @@ namespace BT_QLSV_QLLH
 
             LoadData();
         }
+
+        private void btn_QLSV_Click(object sender, EventArgs e)
+        {
+            QLSV QLSV = new QLSV();
+            QLSV.Show();
+            this.Hide();
+        }
+
+        private void btn_xemds_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

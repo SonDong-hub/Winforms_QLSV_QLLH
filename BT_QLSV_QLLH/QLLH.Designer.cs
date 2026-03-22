@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_xemds = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_lammoi = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
             this.txb_khoá = new System.Windows.Forms.TextBox();
             this.txb_khoa = new System.Windows.Forms.TextBox();
             this.txb_tenlop = new System.Windows.Forms.TextBox();
@@ -47,10 +49,12 @@
             this.lb_timkiem = new System.Windows.Forms.Label();
             this.txb_timkiem = new System.Windows.Forms.TextBox();
             this.btn_timkiem = new System.Windows.Forms.Button();
+            this.btn_QLSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lop)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,10 +68,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel1.Controls.Add(this.btn_xoa);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_lammoi);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_sua);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_them);
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
             this.splitContainer1.Panel1.Controls.Add(this.txb_khoá);
             this.splitContainer1.Panel1.Controls.Add(this.txb_khoa);
             this.splitContainer1.Panel1.Controls.Add(this.txb_tenlop);
@@ -83,9 +84,35 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.dgv_lop);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 540);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.Size = new System.Drawing.Size(855, 611);
+            this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_xemds);
+            this.panel2.Controls.Add(this.btn_xoa);
+            this.panel2.Controls.Add(this.btn_lammoi);
+            this.panel2.Controls.Add(this.btn_them);
+            this.panel2.Controls.Add(this.btn_sua);
+            this.panel2.Location = new System.Drawing.Point(16, 384);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(234, 204);
+            this.panel2.TabIndex = 5;
+            // 
+            // btn_xemds
+            // 
+            this.btn_xemds.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_xemds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xemds.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xemds.ForeColor = System.Drawing.Color.White;
+            this.btn_xemds.Location = new System.Drawing.Point(17, 127);
+            this.btn_xemds.Name = "btn_xemds";
+            this.btn_xemds.Size = new System.Drawing.Size(201, 61);
+            this.btn_xemds.TabIndex = 10;
+            this.btn_xemds.Text = "Xem danh sách sinh viên";
+            this.btn_xemds.UseVisualStyleBackColor = false;
+            this.btn_xemds.Click += new System.EventHandler(this.btn_xemds_Click);
             // 
             // btn_xoa
             // 
@@ -93,10 +120,10 @@
             this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(16, 447);
+            this.btn_xoa.Location = new System.Drawing.Point(17, 72);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(98, 49);
-            this.btn_xoa.TabIndex = 3;
+            this.btn_xoa.TabIndex = 8;
             this.btn_xoa.Text = "Xoá";
             this.btn_xoa.UseVisualStyleBackColor = false;
             // 
@@ -106,25 +133,12 @@
             this.btn_lammoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_lammoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lammoi.ForeColor = System.Drawing.Color.White;
-            this.btn_lammoi.Location = new System.Drawing.Point(136, 447);
+            this.btn_lammoi.Location = new System.Drawing.Point(121, 72);
             this.btn_lammoi.Name = "btn_lammoi";
             this.btn_lammoi.Size = new System.Drawing.Size(98, 49);
-            this.btn_lammoi.TabIndex = 3;
+            this.btn_lammoi.TabIndex = 9;
             this.btn_lammoi.Text = "Làm mới";
             this.btn_lammoi.UseVisualStyleBackColor = false;
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.BackColor = System.Drawing.Color.Green;
-            this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sua.ForeColor = System.Drawing.Color.White;
-            this.btn_sua.Location = new System.Drawing.Point(136, 380);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(98, 49);
-            this.btn_sua.TabIndex = 3;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.UseVisualStyleBackColor = false;
             // 
             // btn_them
             // 
@@ -132,26 +146,39 @@
             this.btn_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.ForeColor = System.Drawing.Color.White;
-            this.btn_them.Location = new System.Drawing.Point(16, 380);
+            this.btn_them.Location = new System.Drawing.Point(17, 17);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(98, 49);
-            this.btn_them.TabIndex = 3;
+            this.btn_them.TabIndex = 6;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = false;
+            // 
+            // btn_sua
+            // 
+            this.btn_sua.BackColor = System.Drawing.Color.Green;
+            this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.ForeColor = System.Drawing.Color.White;
+            this.btn_sua.Location = new System.Drawing.Point(121, 17);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(98, 49);
+            this.btn_sua.TabIndex = 7;
+            this.btn_sua.Text = "Sửa";
+            this.btn_sua.UseVisualStyleBackColor = false;
             // 
             // txb_khoá
             // 
             this.txb_khoá.Location = new System.Drawing.Point(16, 310);
             this.txb_khoá.Name = "txb_khoá";
             this.txb_khoá.Size = new System.Drawing.Size(218, 22);
-            this.txb_khoá.TabIndex = 2;
+            this.txb_khoá.TabIndex = 4;
             // 
             // txb_khoa
             // 
             this.txb_khoa.Location = new System.Drawing.Point(16, 232);
             this.txb_khoa.Name = "txb_khoa";
             this.txb_khoa.Size = new System.Drawing.Size(218, 22);
-            this.txb_khoa.TabIndex = 2;
+            this.txb_khoa.TabIndex = 3;
             // 
             // txb_tenlop
             // 
@@ -165,7 +192,7 @@
             this.txb_malop.Location = new System.Drawing.Point(16, 80);
             this.txb_malop.Name = "txb_malop";
             this.txb_malop.Size = new System.Drawing.Size(218, 22);
-            this.txb_malop.TabIndex = 2;
+            this.txb_malop.TabIndex = 1;
             // 
             // lb_khoá
             // 
@@ -230,13 +257,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_QLSV);
             this.panel1.Controls.Add(this.lb_timkiem);
             this.panel1.Controls.Add(this.txb_timkiem);
             this.panel1.Controls.Add(this.btn_timkiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 100);
+            this.panel1.Size = new System.Drawing.Size(567, 100);
             this.panel1.TabIndex = 0;
             // 
             // lb_timkiem
@@ -269,19 +297,32 @@
             this.btn_timkiem.Text = "Tìm";
             this.btn_timkiem.UseVisualStyleBackColor = false;
             // 
+            // btn_QLSV
+            // 
+            this.btn_QLSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QLSV.Location = new System.Drawing.Point(472, 31);
+            this.btn_QLSV.Name = "btn_QLSV";
+            this.btn_QLSV.Size = new System.Drawing.Size(77, 37);
+            this.btn_QLSV.TabIndex = 4;
+            this.btn_QLSV.Text = "QLSV";
+            this.btn_QLSV.UseVisualStyleBackColor = true;
+            this.btn_QLSV.Click += new System.EventHandler(this.btn_QLSV_Click);
+            // 
             // QLLH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 540);
+            this.ClientSize = new System.Drawing.Size(855, 611);
             this.Controls.Add(this.splitContainer1);
             this.Name = "QLLH";
             this.Text = "QLLH";
+            this.Load += new System.EventHandler(this.QLLH_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lop)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -310,5 +351,8 @@
         private System.Windows.Forms.TextBox txb_timkiem;
         private System.Windows.Forms.DataGridView dgv_lop;
         private System.Windows.Forms.Button btn_timkiem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_xemds;
+        private System.Windows.Forms.Button btn_QLSV;
     }
 }

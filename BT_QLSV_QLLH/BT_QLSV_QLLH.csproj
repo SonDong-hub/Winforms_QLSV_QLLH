@@ -69,6 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="XemDSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemDSSV.Designer.cs">
+      <DependentUpon>XemDSSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Đăng nhập.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLSV.resx">
       <DependentUpon>QLSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemDSSV.resx">
+      <DependentUpon>XemDSSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Đăng nhập.resx">
       <DependentUpon>Đăng nhập.cs</DependentUpon>

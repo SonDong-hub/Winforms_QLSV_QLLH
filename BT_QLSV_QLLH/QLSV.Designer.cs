@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbx_lop = new System.Windows.Forms.ComboBox();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_lammoi = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.cmb_gioitinh = new System.Windows.Forms.ComboBox();
             this.dt_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.txb_hoten = new System.Windows.Forms.TextBox();
-            this.txb_lop = new System.Windows.Forms.TextBox();
             this.txb_masv = new System.Windows.Forms.TextBox();
             this.lb_lop = new System.Windows.Forms.Label();
             this.lb_gioitinh = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.lb_thongtinsv = new System.Windows.Forms.Label();
             this.dgv_sinhvien = new System.Windows.Forms.DataGridView();
             this.pnl_timkiem = new System.Windows.Forms.Panel();
+            this.btn_QLLH = new System.Windows.Forms.Button();
             this.lb_timkiem = new System.Windows.Forms.Label();
             this.txb_timkiem = new System.Windows.Forms.TextBox();
             this.btn_tim = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel1.Controls.Add(this.cbx_lop);
             this.splitContainer1.Panel1.Controls.Add(this.btn_xoa);
             this.splitContainer1.Panel1.Controls.Add(this.btn_lammoi);
             this.splitContainer1.Panel1.Controls.Add(this.btn_sua);
@@ -73,7 +75,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.cmb_gioitinh);
             this.splitContainer1.Panel1.Controls.Add(this.dt_ngaysinh);
             this.splitContainer1.Panel1.Controls.Add(this.txb_hoten);
-            this.splitContainer1.Panel1.Controls.Add(this.txb_lop);
             this.splitContainer1.Panel1.Controls.Add(this.txb_masv);
             this.splitContainer1.Panel1.Controls.Add(this.lb_lop);
             this.splitContainer1.Panel1.Controls.Add(this.lb_gioitinh);
@@ -87,12 +88,21 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.dgv_sinhvien);
             this.splitContainer1.Panel2.Controls.Add(this.pnl_timkiem);
-            this.splitContainer1.Size = new System.Drawing.Size(868, 615);
-            this.splitContainer1.SplitterDistance = 289;
+            this.splitContainer1.Size = new System.Drawing.Size(875, 615);
+            this.splitContainer1.SplitterDistance = 291;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // cbx_lop
+            // 
+            this.cbx_lop.FormattingEnabled = true;
+            this.cbx_lop.Location = new System.Drawing.Point(16, 386);
+            this.cbx_lop.Name = "cbx_lop";
+            this.cbx_lop.Size = new System.Drawing.Size(231, 24);
+            this.cbx_lop.TabIndex = 9;
             // 
             // btn_xoa
             // 
+            this.btn_xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_xoa.BackColor = System.Drawing.Color.Red;
             this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,6 +117,7 @@
             // 
             // btn_lammoi
             // 
+            this.btn_lammoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_lammoi.BackColor = System.Drawing.Color.Purple;
             this.btn_lammoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_lammoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,6 +132,7 @@
             // 
             // btn_sua
             // 
+            this.btn_sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_sua.BackColor = System.Drawing.Color.Green;
             this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,6 +147,7 @@
             // 
             // btn_them
             // 
+            this.btn_them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_them.BackColor = System.Drawing.Color.Blue;
             this.btn_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,13 +181,6 @@
             this.txb_hoten.Name = "txb_hoten";
             this.txb_hoten.Size = new System.Drawing.Size(231, 22);
             this.txb_hoten.TabIndex = 1;
-            // 
-            // txb_lop
-            // 
-            this.txb_lop.Location = new System.Drawing.Point(16, 386);
-            this.txb_lop.Name = "txb_lop";
-            this.txb_lop.Size = new System.Drawing.Size(231, 22);
-            this.txb_lop.TabIndex = 4;
             // 
             // txb_masv
             // 
@@ -247,24 +253,38 @@
             // 
             this.dgv_sinhvien.BackgroundColor = System.Drawing.Color.White;
             this.dgv_sinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sinhvien.Location = new System.Drawing.Point(31, 122);
+            this.dgv_sinhvien.Location = new System.Drawing.Point(23, 121);
             this.dgv_sinhvien.Name = "dgv_sinhvien";
             this.dgv_sinhvien.RowHeadersWidth = 51;
             this.dgv_sinhvien.RowTemplate.Height = 24;
-            this.dgv_sinhvien.Size = new System.Drawing.Size(524, 332);
+            this.dgv_sinhvien.Size = new System.Drawing.Size(540, 333);
             this.dgv_sinhvien.TabIndex = 1;
             this.dgv_sinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sinhvien_CellClick);
             // 
             // pnl_timkiem
             // 
+            this.pnl_timkiem.Controls.Add(this.btn_QLLH);
             this.pnl_timkiem.Controls.Add(this.lb_timkiem);
             this.pnl_timkiem.Controls.Add(this.txb_timkiem);
             this.pnl_timkiem.Controls.Add(this.btn_tim);
             this.pnl_timkiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_timkiem.Location = new System.Drawing.Point(0, 0);
             this.pnl_timkiem.Name = "pnl_timkiem";
-            this.pnl_timkiem.Size = new System.Drawing.Size(575, 102);
+            this.pnl_timkiem.Size = new System.Drawing.Size(580, 102);
             this.pnl_timkiem.TabIndex = 0;
+            // 
+            // btn_QLLH
+            // 
+            this.btn_QLLH.BackColor = System.Drawing.Color.White;
+            this.btn_QLLH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QLLH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QLLH.Location = new System.Drawing.Point(494, 34);
+            this.btn_QLLH.Name = "btn_QLLH";
+            this.btn_QLLH.Size = new System.Drawing.Size(74, 31);
+            this.btn_QLLH.TabIndex = 11;
+            this.btn_QLLH.Text = "QLLH";
+            this.btn_QLLH.UseVisualStyleBackColor = false;
+            this.btn_QLLH.Click += new System.EventHandler(this.btn_QLLH_Click);
             // 
             // lb_timkiem
             // 
@@ -303,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 615);
+            this.ClientSize = new System.Drawing.Size(875, 615);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "QLSV";
@@ -338,11 +358,12 @@
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.ComboBox cmb_gioitinh;
-        private System.Windows.Forms.TextBox txb_lop;
         private System.Windows.Forms.Panel pnl_timkiem;
         private System.Windows.Forms.Label lb_timkiem;
         private System.Windows.Forms.TextBox txb_timkiem;
         private System.Windows.Forms.DataGridView dgv_sinhvien;
         private System.Windows.Forms.Button btn_tim;
+        private System.Windows.Forms.ComboBox cbx_lop;
+        private System.Windows.Forms.Button btn_QLLH;
     }
 }
